@@ -36,12 +36,16 @@
             genderDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             studentBindingSource = new BindingSource(components);
             btnEdit = new Button();
+            btnNew = new Button();
+            btnDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)studentBindingSource).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.White;
@@ -110,11 +114,51 @@
             btnEdit.UseVisualStyleBackColor = true;
             btnEdit.Click += btnEdit_Click;
             // 
+            // btnNew
+            // 
+            btnNew.Cursor = Cursors.Hand;
+            btnNew.FlatAppearance.BorderColor = Color.White;
+            btnNew.FlatAppearance.BorderSize = 0;
+            btnNew.FlatAppearance.MouseDownBackColor = Color.White;
+            btnNew.FlatAppearance.MouseOverBackColor = Color.White;
+            btnNew.FlatStyle = FlatStyle.Flat;
+            btnNew.Image = Properties.Resources.Addicon;
+            btnNew.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNew.Location = new Point(702, 47);
+            btnNew.Name = "btnNew";
+            btnNew.Size = new Size(84, 41);
+            btnNew.TabIndex = 11;
+            btnNew.Text = "جديد";
+            btnNew.TextAlign = ContentAlignment.MiddleRight;
+            btnNew.UseVisualStyleBackColor = true;
+            btnNew.Click += btnNew_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Cursor = Cursors.Hand;
+            btnDelete.FlatAppearance.BorderColor = Color.White;
+            btnDelete.FlatAppearance.BorderSize = 0;
+            btnDelete.FlatAppearance.MouseDownBackColor = Color.White;
+            btnDelete.FlatAppearance.MouseOverBackColor = Color.White;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Image = Properties.Resources.Deleteicon;
+            btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDelete.Location = new Point(414, 47);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(84, 41);
+            btnDelete.TabIndex = 12;
+            btnDelete.Text = "حذف";
+            btnDelete.TextAlign = ContentAlignment.MiddleRight;
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
             // FrmListOfStudent
             // 
             AutoScaleDimensions = new SizeF(9F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(860, 505);
+            Controls.Add(btnDelete);
+            Controls.Add(btnNew);
             Controls.Add(btnEdit);
             Controls.Add(dataGridView1);
             Name = "FrmListOfStudent";
@@ -134,5 +178,7 @@
         private DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
         private BindingSource studentBindingSource;
         private Button btnEdit;
+        private Button btnNew;
+        private Button btnDelete;
     }
 }

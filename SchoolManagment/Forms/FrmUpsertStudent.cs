@@ -12,6 +12,10 @@ namespace SchoolManagment.Forms
         {
             InitializeComponent();
             Student = student;
+            if (student == null)
+            {
+                Student = new Student();
+            }
             studentBindingSource.DataSource = Student;
         }
 
@@ -27,7 +31,7 @@ namespace SchoolManagment.Forms
 
         private void FrmUpsertStudent_Load(object sender, EventArgs e)
         {
-            if(Student ==null)
+            if (Student == null)
             {
                 Activ(false);
             }
@@ -38,21 +42,16 @@ namespace SchoolManagment.Forms
                 Activ(true);
             }
 
-                gernders.Add("ذكر");
+            gernders.Add("ذكر");
             gernders.Add("أنثى");
             CBGenderType.DataSource = gernders;
             btnSave.Enabled = false;
         }
         private void btnNew_Click(object sender, EventArgs e)
         {
-            if(Student == null)
-            {
-                Student = new Student();
-                Activ(true);
-                btnSave.Enabled = true;
-                btnNew.Enabled = false;
-            }
-            
+            Activ(true);
+            btnSave.Enabled = true;
+            btnNew.Enabled = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

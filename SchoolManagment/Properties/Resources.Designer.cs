@@ -93,6 +93,16 @@ namespace SchoolManagment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Deleteicon {
+            get {
+                object obj = ResourceManager.GetObject("Deleteicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login64 {
             get {
                 object obj = ResourceManager.GetObject("login64", resourceCulture);
