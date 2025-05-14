@@ -6,12 +6,13 @@ namespace SchoolManagment.Forms
 {
     public partial class FrmUpsertStudent : FrmBase
     {
-        Student Student;
+        Student? Student;
         DBSchool db = new DBSchool();
-        public FrmUpsertStudent()
+        public FrmUpsertStudent(Student student)
         {
             InitializeComponent();
-
+            Student = student;
+            studentBindingSource.DataSource = Student;
         }
 
         List<string> gernders = new List<string>();
@@ -26,18 +27,32 @@ namespace SchoolManagment.Forms
 
         private void FrmUpsertStudent_Load(object sender, EventArgs e)
         {
-            Activ(false);
-            gernders.Add("ذكر");
+            if(Student ==null)
+            {
+                Activ(false);
+            }
+            else
+            {
+                txtFullName.Text = Student.FullName;
+
+                Activ(true);
+            }
+
+                gernders.Add("ذكر");
             gernders.Add("أنثى");
             CBGenderType.DataSource = gernders;
             btnSave.Enabled = false;
         }
         private void btnNew_Click(object sender, EventArgs e)
         {
-            Student = new Student();
-            Activ(true);
-            btnSave.Enabled = true;
-            btnNew.Enabled = false;
+            if(Student == null)
+            {
+                Student = new Student();
+                Activ(true);
+                btnSave.Enabled = true;
+                btnNew.Enabled = false;
+            }
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)

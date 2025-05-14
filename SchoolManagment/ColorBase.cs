@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolManagment.Models
+namespace SchoolManagment
 {
-    public enum GenderType
+    public class ColorBase
     {
-        Male=100,
-        FeMale=200,
+        public string ColorName { get; set; } = "Blue";
+
     }
 }

@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             txtFullName = new TextBox();
+            studentBindingSource = new BindingSource(components);
             txtId = new TextBox();
             label2 = new Label();
             DTPBithDate = new DateTimePicker();
@@ -38,6 +40,7 @@
             btnNew = new Button();
             btnSave = new Button();
             label4 = new Label();
+            ((System.ComponentModel.ISupportInitialize)studentBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -52,14 +55,20 @@
             // txtFullName
             // 
             txtFullName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtFullName.DataBindings.Add(new Binding("Text", studentBindingSource, "FullName", true));
             txtFullName.Location = new Point(166, 92);
             txtFullName.Name = "txtFullName";
             txtFullName.Size = new Size(292, 24);
             txtFullName.TabIndex = 1;
             // 
+            // studentBindingSource
+            // 
+            studentBindingSource.DataSource = typeof(Models.Student);
+            // 
             // txtId
             // 
             txtId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtId.DataBindings.Add(new Binding("Text", studentBindingSource, "Id", true));
             txtId.Location = new Point(166, 43);
             txtId.Name = "txtId";
             txtId.Size = new Size(110, 24);
@@ -77,6 +86,8 @@
             // DTPBithDate
             // 
             DTPBithDate.CustomFormat = "MM-yyyy-dd";
+            DTPBithDate.DataBindings.Add(new Binding("Text", studentBindingSource, "BirthDate", true));
+            DTPBithDate.DataBindings.Add(new Binding("Value", studentBindingSource, "BirthDate", true));
             DTPBithDate.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DTPBithDate.Format = DateTimePickerFormat.Short;
             DTPBithDate.Location = new Point(166, 139);
@@ -111,7 +122,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Image = Properties.Resources.Addicon;
             btnNew.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNew.Location = new Point(145, 243);
+            btnNew.Location = new Point(130, 243);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(84, 41);
             btnNew.TabIndex = 9;
@@ -130,7 +141,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Image = Properties.Resources.saveicon;
             btnSave.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSave.Location = new Point(336, 243);
+            btnSave.Location = new Point(348, 243);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(84, 41);
             btnSave.TabIndex = 10;
@@ -153,7 +164,7 @@
             AutoScaleDimensions = new SizeF(9F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(536, 296);
+            ClientSize = new Size(536, 314);
             Controls.Add(label4);
             Controls.Add(btnSave);
             Controls.Add(btnNew);
@@ -169,6 +180,7 @@
             Name = "FrmUpsertStudent";
             Text = "FrmUpsertStudent";
             Load += FrmUpsertStudent_Load;
+            ((System.ComponentModel.ISupportInitialize)studentBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -185,5 +197,6 @@
         private Button btnNew;
         private Button btnSave;
         private Label label4;
+        private BindingSource studentBindingSource;
     }
 }

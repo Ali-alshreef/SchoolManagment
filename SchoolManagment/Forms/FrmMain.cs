@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolManagment.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace SchoolManagment.Forms
 
         private void MnuStudentAdd_Click(object sender, EventArgs e)
         {
-            FrmUpsertStudent frmUpsertStudent = new FrmUpsertStudent();
+            FrmUpsertStudent frmUpsertStudent = new FrmUpsertStudent(null);
             frmUpsertStudent.ShowDialog();
         }
 
