@@ -45,7 +45,6 @@ namespace SchoolManagment.Forms
             gernders.Add("ذكر");
             gernders.Add("أنثى");
             CBGenderType.DataSource = gernders;
-            btnSave.Enabled = false;
         }
         private void btnNew_Click(object sender, EventArgs e)
         {

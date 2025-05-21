@@ -58,7 +58,7 @@
             txtFullName.DataBindings.Add(new Binding("Text", studentBindingSource, "FullName", true));
             txtFullName.Location = new Point(166, 92);
             txtFullName.Name = "txtFullName";
-            txtFullName.Size = new Size(292, 24);
+            txtFullName.Size = new Size(303, 24);
             txtFullName.TabIndex = 1;
             // 
             // studentBindingSource
@@ -71,7 +71,7 @@
             txtId.DataBindings.Add(new Binding("Text", studentBindingSource, "Id", true));
             txtId.Location = new Point(166, 43);
             txtId.Name = "txtId";
-            txtId.Size = new Size(110, 24);
+            txtId.Size = new Size(121, 24);
             txtId.TabIndex = 3;
             // 
             // label2
@@ -164,7 +164,7 @@
             AutoScaleDimensions = new SizeF(9F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(536, 314);
+            ClientSize = new Size(547, 331);
             Controls.Add(label4);
             Controls.Add(btnSave);
             Controls.Add(btnNew);
