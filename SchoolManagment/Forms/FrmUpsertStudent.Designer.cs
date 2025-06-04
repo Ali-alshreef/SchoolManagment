@@ -60,6 +60,7 @@
             txtFullName.Name = "txtFullName";
             txtFullName.Size = new Size(303, 24);
             txtFullName.TabIndex = 1;
+            txtFullName.KeyDown += txtFullName_KeyDown;
             // 
             // studentBindingSource
             // 
@@ -73,6 +74,8 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(121, 24);
             txtId.TabIndex = 3;
+            txtId.KeyDown += txtId_KeyDown;
+            txtId.KeyUp += txtId_KeyUp;
             // 
             // label2
             // 

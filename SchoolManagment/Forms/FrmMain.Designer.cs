@@ -44,6 +44,7 @@
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
             checkBox2 = new CheckBox();
+            button5 = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -201,12 +202,23 @@
             checkBox2.Text = "checkBox2";
             checkBox2.UseVisualStyleBackColor = true;
             // 
+            // button5
+            // 
+            button5.Location = new Point(707, 72);
+            button5.Name = "button5";
+            button5.Size = new Size(126, 51);
+            button5.TabIndex = 11;
+            button5.Text = "Show";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(9F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(962, 449);
+            Controls.Add(button5);
             Controls.Add(checkBox2);
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
@@ -251,5 +263,6 @@
         private RadioButton radioButton1;
         private RadioButton radioButton2;
         private CheckBox checkBox2;
+        private Button button5;
     }
 }

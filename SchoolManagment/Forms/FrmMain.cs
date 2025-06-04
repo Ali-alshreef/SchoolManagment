@@ -22,8 +22,8 @@ namespace SchoolManagment.Forms
         private void MnuStudentAdd_Click(object sender, EventArgs e)
         {
             frmUpsertStudent = new FrmUpsertStudent(null);
-            frmUpsertStudent.Text = "11111111111";
             frmUpsertStudent.Show();
+            MessageBox.Show("215461");
         }
 
         private void mnuListOfStudent_Click(object sender, EventArgs e)
@@ -100,6 +100,29 @@ namespace SchoolManagment.Forms
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DialogResult b = MessageBox.Show("هل انت متأكد من الحذف",
+                "تأكيد الحذف", MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button4);
+
+            if (b == DialogResult.Yes)
+            {
+                MessageBox.Show("نعم");
+            }
+        
+            else if (b == DialogResult.No)
+            {
+                MessageBox.Show("لا");
+            }
+        
+            else
+            {
+                MessageBox.Show("الغاءا");
+            }
         }
     }
 }

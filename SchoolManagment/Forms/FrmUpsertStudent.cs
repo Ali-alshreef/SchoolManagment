@@ -77,5 +77,29 @@ namespace SchoolManagment.Forms
                 MessageBox.Show("يجب ادخال ارقام فقط");
             }
         }
+
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtFullName.Focus();
+            }
+        }
+        private void txtId_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtFullName.Focus();
+            }
+        }
+        private void txtFullName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                DTPBithDate.Focus();
+            }
+        }
+
+       
     }
 }

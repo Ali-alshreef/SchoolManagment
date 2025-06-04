@@ -10,11 +10,21 @@ namespace SchoolManagment
     {
         public ColorA()
         {
-            string x = ColorName;
-            ColorName = "Black";
-            string y = ColorName;
-            ColorBase color = new ColorBase();
-            string s = color.ColorName;
+            //string x = ColorName;
+            //ColorName = "Black";
+            //string y = ColorName;
+            //ColorBase color = new ColorBase();
+            //string s = color.ColorName;
+        }
+
+        public static void ShowStatic()
+        {
+
+        }
+
+        public void Show()
+        {
+
         }
     }
 }
