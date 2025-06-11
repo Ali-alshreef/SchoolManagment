@@ -72,7 +72,7 @@
             MnuStudentAdd.Image = Properties.Resources.personeAdd;
             MnuStudentAdd.ImageScaling = ToolStripItemImageScaling.None;
             MnuStudentAdd.Name = "MnuStudentAdd";
-            MnuStudentAdd.Size = new Size(154, 38);
+            MnuStudentAdd.Size = new Size(196, 38);
             MnuStudentAdd.Text = "إضافة طالب";
             MnuStudentAdd.Click += MnuStudentAdd_Click;
             // 
@@ -81,7 +81,7 @@
             mnuListOfStudent.Image = Properties.Resources.personsearch;
             mnuListOfStudent.ImageScaling = ToolStripItemImageScaling.None;
             mnuListOfStudent.Name = "mnuListOfStudent";
-            mnuListOfStudent.Size = new Size(154, 38);
+            mnuListOfStudent.Size = new Size(196, 38);
             mnuListOfStudent.Text = "قائمة الطلاب";
             mnuListOfStudent.Click += mnuListOfStudent_Click;
             // 
@@ -200,6 +200,7 @@
             checkBox2.Size = new Size(105, 20);
             checkBox2.TabIndex = 10;
             checkBox2.Text = "checkBox2";
+            checkBox2.ThreeState = true;
             checkBox2.UseVisualStyleBackColor = true;
             // 
             // button5
