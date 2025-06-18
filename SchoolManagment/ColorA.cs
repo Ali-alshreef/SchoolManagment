@@ -15,16 +15,18 @@ namespace SchoolManagment
             //string y = ColorName;
             //ColorBase color = new ColorBase();
             //string s = color.ColorName;
+            
         }
 
-        public static void ShowStatic()
+        public override void Print()
         {
+            base.Print();
+            Console.WriteLine(" Color A ");
 
         }
-
         public void Show()
         {
-
+          
         }
     }
 }

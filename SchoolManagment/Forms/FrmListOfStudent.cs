@@ -1,4 +1,5 @@
-﻿using SchoolManagment.Models;
+﻿using SchoolManagment.Data;
+using SchoolManagment.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace SchoolManagment.Forms
 {
     public partial class FrmListOfStudent : FrmBase
     {
-        List<Student> list = new List<Student>();
+        DBSchool db = new DBSchool();
         public FrmListOfStudent()
         {
             InitializeComponent();
@@ -21,17 +22,7 @@ namespace SchoolManagment.Forms
 
         private void FrmListOfStudent_Load(object sender, EventArgs e)
         {
-
-            Student student = new Student();
-            student.Id = 1;
-            student.FullName = "خالد";
-            Student student2 = new Student();
-            student2.Id = 2;
-            student2.FullName = "احمد";
-            list.Add(student);
-            list.Add(student2);
-            studentBindingSource.DataSource = list;
-
+            studentBindingSource.DataSource = db.Students.ToList();
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -44,8 +35,6 @@ namespace SchoolManagment.Forms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            bool b;
-            int? x = null;
             var s = studentBindingSource.Current as Student;
             FrmUpsertStudent frmUpsertStudent = new FrmUpsertStudent(s);
             frmUpsertStudent.ShowDialog();
@@ -76,7 +65,7 @@ namespace SchoolManagment.Forms
             //// }
             if (MessageBox.Show("هل متأكد من الحذف", "11", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-               Student s = studentBindingSource.Current as Student;
+                Student s = studentBindingSource.Current as Student;
                 studentBindingSource.Remove(s);
             }
 
@@ -85,6 +74,27 @@ namespace SchoolManagment.Forms
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            DBSchool dbR = new DBSchool();
+            studentBindingSource.DataSource = dbR.Students.ToList();
+        }
+
+        private void btnAddInThreeTables_Click(object sender, EventArgs e)
+        {
+            City c = new City();
+            c.Name = "زليتن";
+            Subject s = new Subject();
+            s.SubjectName = "رياضيات";
+            Student st = new Student();
+            st.FullName = "علي";
+            st.BirthDate = DateTime.Now.AddYears(-30);
+            db.Cities.Add(c);
+            db.Subjects.Add(s);
+            db.Students.Add(st);
+            db.SaveChanges();
         }
     }
 }

@@ -15,6 +15,11 @@ namespace SchoolManagment.Forms
             if (student == null)
             {
                 Student = new Student();
+                db.Students.Add(Student);
+            }
+            else
+            {
+                Student = db.Students.Find(student.Id);
             }
             studentBindingSource.DataSource = Student;
         }
@@ -64,13 +69,12 @@ namespace SchoolManagment.Forms
                     return;
                 }
 
-                Student.Id = Convert.ToInt16(txtId.Text);
-                Student.FullName = txtFullName.Text;
-                Student.BirthDate = DTPBithDate.Value;
-                db.Students.Add(Student);
+               
+                db.SaveChanges();
                 Activ(false);
                 btnSave.Enabled = false;
                 btnNew.Enabled = true;
+                MessageBox.Show("تم الحفظ");
             }
             catch (Exception)
             {

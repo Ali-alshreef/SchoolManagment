@@ -113,16 +113,28 @@ namespace SchoolManagment.Forms
             {
                 MessageBox.Show("نعم");
             }
-        
+
             else if (b == DialogResult.No)
             {
                 MessageBox.Show("لا");
             }
-        
+
             else
             {
                 MessageBox.Show("الغاءا");
             }
+        }
+
+        private void قائمةالموادToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSubjectList frmSubjectList = new FrmSubjectList();
+            frmSubjectList.ShowDialog();
+        }
+
+        private void إضافةمادةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpsertSubject upsertSubject = new UpsertSubject(null);
+            upsertSubject.ShowDialog();
         }
     }
 }

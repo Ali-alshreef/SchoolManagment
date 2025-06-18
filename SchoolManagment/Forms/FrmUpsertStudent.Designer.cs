@@ -72,6 +72,7 @@
             txtId.DataBindings.Add(new Binding("Text", studentBindingSource, "Id", true));
             txtId.Location = new Point(166, 43);
             txtId.Name = "txtId";
+            txtId.ReadOnly = true;
             txtId.Size = new Size(121, 24);
             txtId.TabIndex = 3;
             txtId.KeyDown += txtId_KeyDown;

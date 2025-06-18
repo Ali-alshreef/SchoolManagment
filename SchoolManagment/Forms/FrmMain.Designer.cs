@@ -34,6 +34,7 @@
             mnuListOfStudent = new ToolStripMenuItem();
             الموادالدراسيةToolStripMenuItem = new ToolStripMenuItem();
             إضافةمادةToolStripMenuItem = new ToolStripMenuItem();
+            قائمةالموادToolStripMenuItem = new ToolStripMenuItem();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -72,7 +73,7 @@
             MnuStudentAdd.Image = Properties.Resources.personeAdd;
             MnuStudentAdd.ImageScaling = ToolStripItemImageScaling.None;
             MnuStudentAdd.Name = "MnuStudentAdd";
-            MnuStudentAdd.Size = new Size(196, 38);
+            MnuStudentAdd.Size = new Size(154, 38);
             MnuStudentAdd.Text = "إضافة طالب";
             MnuStudentAdd.Click += MnuStudentAdd_Click;
             // 
@@ -81,13 +82,13 @@
             mnuListOfStudent.Image = Properties.Resources.personsearch;
             mnuListOfStudent.ImageScaling = ToolStripItemImageScaling.None;
             mnuListOfStudent.Name = "mnuListOfStudent";
-            mnuListOfStudent.Size = new Size(196, 38);
+            mnuListOfStudent.Size = new Size(154, 38);
             mnuListOfStudent.Text = "قائمة الطلاب";
             mnuListOfStudent.Click += mnuListOfStudent_Click;
             // 
             // الموادالدراسيةToolStripMenuItem
             // 
-            الموادالدراسيةToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { إضافةمادةToolStripMenuItem });
+            الموادالدراسيةToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { إضافةمادةToolStripMenuItem, قائمةالموادToolStripMenuItem });
             الموادالدراسيةToolStripMenuItem.Name = "الموادالدراسيةToolStripMenuItem";
             الموادالدراسيةToolStripMenuItem.Size = new Size(91, 36);
             الموادالدراسيةToolStripMenuItem.Text = "المواد الدراسية";
@@ -95,8 +96,16 @@
             // إضافةمادةToolStripMenuItem
             // 
             إضافةمادةToolStripMenuItem.Name = "إضافةمادةToolStripMenuItem";
-            إضافةمادةToolStripMenuItem.Size = new Size(129, 22);
+            إضافةمادةToolStripMenuItem.Size = new Size(180, 22);
             إضافةمادةToolStripMenuItem.Text = "إضافة مادة";
+            إضافةمادةToolStripMenuItem.Click += إضافةمادةToolStripMenuItem_Click;
+            // 
+            // قائمةالموادToolStripMenuItem
+            // 
+            قائمةالموادToolStripMenuItem.Name = "قائمةالموادToolStripMenuItem";
+            قائمةالموادToolStripMenuItem.Size = new Size(180, 22);
+            قائمةالموادToolStripMenuItem.Text = "قائمة المواد";
+            قائمةالموادToolStripMenuItem.Click += قائمةالموادToolStripMenuItem_Click;
             // 
             // button1
             // 
@@ -265,5 +274,6 @@
         private RadioButton radioButton2;
         private CheckBox checkBox2;
         private Button button5;
+        private ToolStripMenuItem قائمةالموادToolStripMenuItem;
     }
 }

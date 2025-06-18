@@ -37,8 +37,9 @@
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             fullNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             birthDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            genderDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             studentBindingSource = new BindingSource(components);
+            btnRefresh = new Button();
+            btnAddInThreeTables = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)studentBindingSource).BeginInit();
             SuspendLayout();
@@ -53,7 +54,7 @@
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.Image = Properties.Resources.customedit;
             btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEdit.Location = new Point(124, 47);
+            btnEdit.Location = new Point(279, 47);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(84, 41);
             btnEdit.TabIndex = 10;
@@ -72,7 +73,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Image = Properties.Resources.Addicon;
             btnNew.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNew.Location = new Point(702, 47);
+            btnNew.Location = new Point(595, 47);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(84, 41);
             btnNew.TabIndex = 11;
@@ -91,7 +92,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Image = Properties.Resources.Deleteicon;
             btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDelete.Location = new Point(414, 47);
+            btnDelete.Location = new Point(418, 47);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(84, 41);
             btnDelete.TabIndex = 12;
@@ -108,7 +109,7 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, fullNameDataGridViewTextBoxColumn, birthDateDataGridViewTextBoxColumn, genderDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, fullNameDataGridViewTextBoxColumn, birthDateDataGridViewTextBoxColumn });
             dataGridView1.DataSource = studentBindingSource;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.SkyBlue;
@@ -119,11 +120,11 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.Location = new Point(0, 175);
+            dataGridView1.Location = new Point(0, 127);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(860, 330);
+            dataGridView1.Size = new Size(860, 378);
             dataGridView1.TabIndex = 13;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -148,22 +149,55 @@
             birthDateDataGridViewTextBoxColumn.Name = "birthDateDataGridViewTextBoxColumn";
             birthDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // genderDataGridViewTextBoxColumn
-            // 
-            genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-            genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-            genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-            genderDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // studentBindingSource
             // 
             studentBindingSource.DataSource = typeof(Models.Student);
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.Cursor = Cursors.Hand;
+            btnRefresh.FlatAppearance.BorderColor = Color.White;
+            btnRefresh.FlatAppearance.BorderSize = 0;
+            btnRefresh.FlatAppearance.MouseDownBackColor = Color.White;
+            btnRefresh.FlatAppearance.MouseOverBackColor = Color.White;
+            btnRefresh.FlatStyle = FlatStyle.Flat;
+            btnRefresh.Image = Properties.Resources.Refresh;
+            btnRefresh.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRefresh.Location = new Point(731, 47);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(84, 41);
+            btnRefresh.TabIndex = 14;
+            btnRefresh.Text = "تحديث";
+            btnRefresh.TextAlign = ContentAlignment.MiddleRight;
+            btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.Click += btnRefresh_Click;
+            // 
+            // btnAddInThreeTables
+            // 
+            btnAddInThreeTables.Cursor = Cursors.Hand;
+            btnAddInThreeTables.FlatAppearance.BorderColor = Color.White;
+            btnAddInThreeTables.FlatAppearance.BorderSize = 0;
+            btnAddInThreeTables.FlatAppearance.MouseDownBackColor = Color.White;
+            btnAddInThreeTables.FlatAppearance.MouseOverBackColor = Color.White;
+            btnAddInThreeTables.FlatStyle = FlatStyle.Flat;
+            btnAddInThreeTables.Image = Properties.Resources.Addicon;
+            btnAddInThreeTables.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAddInThreeTables.Location = new Point(12, 47);
+            btnAddInThreeTables.Name = "btnAddInThreeTables";
+            btnAddInThreeTables.Size = new Size(224, 41);
+            btnAddInThreeTables.TabIndex = 15;
+            btnAddInThreeTables.Text = "اضافة طالب و مادة و مدينة";
+            btnAddInThreeTables.TextAlign = ContentAlignment.MiddleRight;
+            btnAddInThreeTables.UseVisualStyleBackColor = true;
+            btnAddInThreeTables.Click += btnAddInThreeTables_Click;
             // 
             // FrmListOfStudent
             // 
             AutoScaleDimensions = new SizeF(9F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(860, 505);
+            Controls.Add(btnAddInThreeTables);
+            Controls.Add(btnRefresh);
             Controls.Add(dataGridView1);
             Controls.Add(btnDelete);
             Controls.Add(btnNew);
@@ -186,5 +220,7 @@
         private DataGridViewTextBoxColumn birthDateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
         private BindingSource studentBindingSource;
+        private Button btnRefresh;
+        private Button btnAddInThreeTables;
     }
 }

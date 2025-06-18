@@ -10,5 +10,10 @@ namespace SchoolManagment
     {
         public string ColorName { get; set; } = "Blue";
 
+        public virtual void Print()
+        {
+            Console.WriteLine(" ColorBase");
+        }
+
     }
 }
